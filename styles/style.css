@@ -724,17 +724,6 @@ ul.layout-flex {
 /**
 *  ### Grid syntax
 */
-.layout-grid,
-.layout-flexgrid {
-  /* dev Only */
-  /* target all direct children => Columns */
-}
-.layout-grid > *,
-.layout-flexgrid > * {
-  background: lightblue;
-  border: 1px solid;
-}
-
 /* Grid layout using "Grid" */
 .layout-grid {
   --grid_spacing: 1rem;
@@ -880,7 +869,6 @@ nav.layout-flex,
 
 /* NAVBAR component */
 @media (width >= 320px) {
-  .navbar,
   .navbar_inner {
     display: flex; /* initiate flex by default */
     flex-wrap: wrap;
@@ -889,11 +877,9 @@ nav.layout-flex,
     /* better vert alignment for ALL descending elements */
     /* All .nav-list within .navabr */
   }
-  .navbar *,
   .navbar_inner * {
     align-items: center;
   }
-  .navbar .nav-list,
   .navbar_inner .nav-list {
     display: flex; /* could also use 'grid' */
     gap: 1em;

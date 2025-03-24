@@ -6,16 +6,6 @@
     *  ### Grid syntax
     */
 
-    .layout-grid,
-    .layout-flexgrid {
-        /* dev Only */
-        /* target all direct children => Columns */
-        > * {
-            background: lightblue;
-            border: 1px solid;
-        }
-    }
-
     /* Grid layout using "Grid" */
     .layout-grid {
         --grid_spacing: 1rem;
