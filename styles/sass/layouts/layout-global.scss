@@ -1,0 +1,23 @@
+/* Global LAYOUT Utilities  */
+
+    /* creates basic inline-list of items using 'flexbox'. */
+    .layout-flex {
+    display: flex;
+
+    /* ALL direct children elements: 
+        > * {
+        /* flex: 1; ** elements will take up all avaible space **
+        flex: auto;
+        } */
+
+    }
+
+    /* ALL lists with .layout-flex 
+    ul.layout-flex {
+    ** ALL direct children elements: **
+    > * {}
+    } */
+
+    /* adds grid layout context */
+    .layout-grid {
+    display: grid; }

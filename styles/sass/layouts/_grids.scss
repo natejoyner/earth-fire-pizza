@@ -1,0 +1,94 @@
+/**
+ *  ## Grid Systems
+ */
+
+    /**
+    *  ### Grid syntax
+    */
+
+    .layout-grid,
+    .layout-flexgrid {
+        /* dev Only */
+        /* target all direct children => Columns */
+        > * {
+            background: lightblue;
+            border: 1px solid;
+        }
+    }
+
+    /* Grid layout using "Grid" */
+    .layout-grid {
+        --grid_spacing: 1rem;
+        --grid_columns: 4; /* default should be 1 */
+        
+        display: grid;
+        gap: var(--grid_spacing);
+        grid-template-columns: repeat( var(--grid_columns), 1fr);
+    }
+
+    /* easily set "explicit" columns using custom 'data-grid-columns' attr 
+        on parent grid container. */
+    .layout-grid[data-grid-columns="1"] {
+        --grid_columns: 1;
+    }
+
+    .layout-grid[data-grid-columns="2"] {
+        --grid_columns: 2;
+    }
+
+    .layout-grid[data-grid-columns="3"] {
+        --grid_columns: 3;
+    }
+
+    .layout-grid[data-grid-columns="4"] {
+        --grid_columns: 4;
+    }
+
+    /* will automaticlly adjust columns to fit space. */
+    .layout-grid[data-auto-fit="true"] {
+        grid-template-columns: repeat( 
+            auto-fit, minmax( min( calc(240px - var(--grid_spacing)), 100%), 1fr ));
+    }
+
+
+    /**
+    *  ### Flexbox Grid syntax
+    */
+
+    .layout-flexgrid {
+        --grid_spacing: 1rem;
+        --grid_columns: 4; /* default should be 1 */
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--grid_spacing);
+
+        /* grid columns */
+        > * {
+            --basis: calc( (100% / var(--grid_columns)) - var(--grid_spacing)); 
+
+            flex-basis: var(--basis);
+            flex-grow: 1;
+            flex-shrink: 1;
+            min-width: min(240px, var(--basis));
+        }
+    }
+
+    /* easily set "explicit" columns using custom 'data-grid-columns' attr 
+        on parent grid container. */
+    .layout-flexgrid[data-grid-columns="1"] {
+        --grid_columns: 1;
+    }
+
+    .layout-flexgrid[data-grid-columns="2"] {
+        --grid_columns: 2;
+    }
+
+    .layout-flexgrid[data-grid-columns="3"] {
+        --grid_columns: 3;
+    }
+
+    .layout-flexgrid[data-grid-columns="4"] {
+        --grid_columns: 4;
+    }
+    

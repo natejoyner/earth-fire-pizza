@@ -3,10 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Earth Fire Pizza | Traditionally inspired High quality wood fireed pizza made from all natural organic and locally sourced ingredients.</title>
+    
+    <!-- // Favicons // -->
+    <link rel="icon" href="favicons/EFP_favicon@48x48.png">
+    <link href="favicons/EFP_favicon@48x48.png" rel="icon" media="(prefers-color-scheme: light)">
+    <link href="favicons/EFP_favicon_white@48x48.png" rel="icon" media="(prefers-color-scheme: dark)">
+
+    <!-- // Styles // -->
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <!-- // inline page styles // -->
+     <style>
+        /* image mask ref: https://css-tricks.com/almanac/properties/m/mask-image/ */
+
+        .mask-img {
+            -webkit-mask-image: url("./svg/svgviewer-output.svg");
+            mask-image: url("./svg/svgviewer-output.svg");
+            mask-size: contain;
+        }
+
+     </style>
 </head>
 <body>
-    <h1>Hello. This is <bold>Earth Fire Pizza!</bold></h1>
-    <p> Traditionally inspired High quality wood fired pizza made from fresh all natural organic and locally sourced ingredients. Made with love in Michigan!</p>
+
+    <main role="main">
+
+        <header role="banner">
+            <h1>Hello. This is <bold>Earth Fire Pizza!</bold></h1>
+            <p> Traditionally inspired High quality wood fired pizza made from fresh all natural organic and locally sourced ingredients. Made with love in Michigan!</p>
+
+            <img src="images/marganera_pizza_dark_web_LRG.png" alt="" class="mask-img" />
+        </header>
+
+        <!-- // Signup Form // -->
+
+        <section>
+            <div id="mc_embed_shell">
+                <div id="mc_embed_signup">
+
+                    <form action="https://earthfirepizzas.us15.list-manage.com/subscribe/post?u=658ceda3c281b8975814f580e&amp;id=79a0c64ce3&amp;f_id=000aa6e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+
+                        <div id="mc_embed_signup_scroll"><h2>Subscribe</h2>
+                            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                            <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" value="" required=""></div><div class="mc-field-group"><label for="mce-NAME">Name <span class="asterisk">*</span></label><input type="text" name="NAME" class="required text" id="mce-NAME" value="" required="">
+                        </div>
+
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display: none;"></div>
+                            <div class="response" id="mce-success-response" style="display: none;"></div>
+                        </div>
+
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                            <input type="text" name="b_658ceda3c281b8975814f580e_79a0c64ce3" tabindex="-1" value="">
+                        </div>
+
+                            <div class="optionalParent">
+                                <div class="clear foot">
+                                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                                    <p style="margin: 0px auto;"><a href="http://eepurl.com/jaTaJ-" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>    
+        </section>
+
+        <!-- // END Signup Form // -->
+
+    </main>
 </body>
 </html>

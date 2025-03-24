@@ -1,0 +1,9 @@
+
+/* Global Verticle Rythem spacing i.e. "flow-spacing": 
+    Sets spacing in Top --> down manner. More consistant and looks better.
+    Using ems NOT rems allows spacing to adjust reletive to font-size context (parent element).  */
+    
+    .flow-spacing > * + * {
+        margin-top: 1.25em;
+        margin-bottom: 0;
+        }

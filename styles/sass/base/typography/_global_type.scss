@@ -1,0 +1,29 @@
+@use '../../abstracts/variables/colors' as *;
+@use '../../abstracts/variables/typography' as *;
+
+/**
+ *  Global Typography
+ */
+ 
+    body,
+    button,
+    input,
+    select,
+    optgroup,
+    textarea {
+        color: $color__text-main;
+        font-family: $font__main;
+        font-size: 1rem;
+        line-height: $font__line-height-body;
+    }
+
+    html {
+        /* better quote alignment: 
+            (currently not supported in chrome at time of writing.) */
+        hanging-punctuation: first last;
+    }
+
+/* Optimal Line-height technique adapted from:
+	@link https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/ */
+
+    body { line-height: calc(.125rem + 2.5ex + .125rem); }

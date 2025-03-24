@@ -1,0 +1,19 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+/* neater line breaks for headings. */
+h1,h2,h3,h4,h5,h6 {
+	text-wrap: balance;
+}
+
+/* Scalable Headings */
+h1 {
+	/* [min-size], [scaling],[max-size] */
+	font-size: clamp(2.25rem, 2vw + 1rem, 3.25rem);
+}

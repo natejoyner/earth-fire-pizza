@@ -1,0 +1,39 @@
+/* NAVIGATION */
+
+nav,
+[role="navigation"] {
+
+  /* quick ul reset */
+  ul {
+	padding: 0;
+	margin-block: 0;
+	list-style: none;
+  }
+
+  &.layout-flex {
+	/* push child elements to left & right sides */
+	justify-content: space-between; }
+
+}
+
+ /* NAVBAR component */
+
+ @media (width >= 320px) {
+	.navbar_inner {
+	  display: flex; /* initiate flex by default */
+	  flex-wrap: wrap;
+	  /* push child elements to left & right sides */
+	  justify-content: space-between; 
+
+	  /* better vert alignment for ALL descending elements */
+	  * {
+		align-items: center; }
+
+	  /* All .nav-list within .navabr */
+	  .nav-list {
+		display: flex; /* could also use 'grid' */
+		gap: 1em;
+	  }
+
+	}
+  }

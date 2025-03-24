@@ -1,0 +1,7 @@
+/* simple layout container/wrapper:
+    - using .wrapper instead of .container to avoid confusion and potential conflict
+         when using @container queries.  */
+.wrapper {
+    width: min(100% - 2rem, 90ch); /* min( minimum size, maximum size ) */
+    margin-inline: auto;
+}

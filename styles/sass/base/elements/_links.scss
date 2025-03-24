@@ -1,0 +1,37 @@
+@use '../../abstracts/variables/colors' as *;
+
+a {
+	color: $color__link;
+
+	&:visited {
+		color: $color__link-visited;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__link-hover;
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+/**
+ *  In-page anchor link Scrolling behavior
+*/
+
+@media (prefers-reduced-motion: no-preference) {
+	/* setting HTML elements for older browser support. */
+	html, 
+	:has(:target) {
+		scroll-behavior: smooth;
+		scroll-padding-top: 4rem;
+	}
+}
