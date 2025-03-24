@@ -16,11 +16,12 @@
 
     <!-- // inline page styles // -->
      <style>
-        /* image mask ref: https://css-tricks.com/almanac/properties/m/mask-image/ */
+        /* svg masks do not display locally. Must use live server..
+            see docs: https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image */
 
         .mask-img {
-            -webkit-mask-image: url("./svg/svgviewer-output.svg");
-            mask-image: url("./svg/svgviewer-output.svg");
+            -webkit-mask-image: url("./svg/svgviewer-output.svg") no-repeat;
+            mask-image: url("./svg/svgviewer-output.svg") no-repeat;
             mask-size: contain;
         }
 
