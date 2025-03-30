@@ -616,11 +616,19 @@ input[type=reset],
 input[type=submit] {
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
+  border-radius: 0;
   background: #e6e6e6;
-  color: rgba(0, 0, 0, 0.8);
+  color: #404040;
+  font-weight: bold;
   line-height: 1;
   padding: 0.6em 1em 0.6em;
+  cursor: pointer;
+  /**
+   *	Button Modifiers
+   */
+  /**
+   *	'GHOST' button is same as an 'outline' button, but a wayy cooler name! ;)
+   */
 }
 button:hover,
 input[type=button]:hover,
@@ -636,6 +644,21 @@ input[type=reset]:focus,
 input[type=submit]:active,
 input[type=submit]:focus {
   border-color: #aaa #bbb #bbb;
+}
+button:disabled,
+input[type=button]:disabled,
+input[type=reset]:disabled,
+input[type=submit]:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+button.button--ghost,
+input[type=button].button--ghost,
+input[type=reset].button--ghost,
+input[type=submit].button--ghost {
+  background-color: transparent;
+  border: 4px solid transparent;
+  color: #404040;
 }
 
 input[type=text],
@@ -714,7 +737,7 @@ ul.layout-flex {
     - using .wrapper instead of .container to avoid confusion and potential conflict
          when using @container queries.  */
 .wrapper {
-  width: min(100% - 2rem, 90ch); /* min( minimum size, maximum size ) */
+  width: min(100% - 2rem, 1400px); /* min( minimum size, maximum size ) */
   margin-inline: auto;
 }
 
@@ -727,8 +750,7 @@ ul.layout-flex {
 /* Grid layout using "Grid" */
 .layout-grid {
   --grid_spacing: 1rem;
-  --grid_columns: 4; /* default should be 1 */
-  display: grid;
+  --grid_columns: 1; /* default should be 1 */
   gap: var(--grid_spacing);
   grid-template-columns: repeat(var(--grid_columns), 1fr);
 }
@@ -1059,7 +1081,7 @@ nav.layout-flex,
 
 /* Alignments
 --------------------------------------------- */
-.alignleft {
+.align-left {
   /*rtl:ignore*/
   float: left;
   /*rtl:ignore*/
@@ -1067,7 +1089,7 @@ nav.layout-flex,
   margin-bottom: 1.5em;
 }
 
-.alignright {
+.align-right {
   /*rtl:ignore*/
   float: right;
   /*rtl:ignore*/
@@ -1075,7 +1097,7 @@ nav.layout-flex,
   margin-bottom: 1.5em;
 }
 
-.aligncenter {
+.align-center {
   clear: both;
   display: block;
   margin-left: auto;

@@ -7,11 +7,11 @@
     */
 
     /* Grid layout using "Grid" */
+    // already set to display: grid --> 'layouts/_layout-global.scss'
     .layout-grid {
         --grid_spacing: 1rem;
-        --grid_columns: 4; /* default should be 1 */
-        
-        display: grid;
+        --grid_columns: 1; /* default should be 1 */
+    
         gap: var(--grid_spacing);
         grid-template-columns: repeat( var(--grid_columns), 1fr);
     }

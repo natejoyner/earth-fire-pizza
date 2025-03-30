@@ -6,11 +6,13 @@ input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
 	border-color: $color__border-button;
-	border-radius: 3px;
+	border-radius: 0;
 	background: $color__background-button;
-	color: rgba(0, 0, 0, 0.8);
+	color: $color__text-main;
+	font-weight: bold;
 	line-height: 1;
 	padding: 0.6em 1em 0.6em;
+	cursor: pointer;
 
 	&:hover {
 		border-color: $color__border-button-hover;
@@ -20,4 +22,26 @@ input[type="submit"] {
 	&:focus {
 		border-color: $color__border-button-focus;
 	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.35;
+	}
+
+/**
+ *	Button Modifiers
+ */
+
+	/**
+	 *	'GHOST' button is same as an 'outline' button, but a wayy cooler name! ;)
+	 */
+
+	&.button--ghost {
+		background-color: transparent;
+		border: 4px solid transparent;
+		color: $color__text-main;
+	}
+
+
 }
+
