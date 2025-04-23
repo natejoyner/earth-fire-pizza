@@ -694,10 +694,10 @@
                     const response = await fetch(form.action, {
                     method: 'POST',
                     headers: {
-                        "Access-Control-Allow-Origin": "https://earthfirepizzas.us15.list-manage.com/subscribe/post?u=658ceda3c281b8975814f580e&id=79a0c64ce3&f_id=000aa6e0f0",
+                        "Access-Control-Allow-Origin": "https://earthfirepizzas.com",
                     },
                     body: formData,
-                    mode: 'cors' // Add this line
+                    mode: 'no-cors' // Add this line 
                     });
 
                     if (response.status === 200) {
