@@ -693,9 +693,6 @@
                 try {
                     const response = await fetch(form.action, {
                     method: 'POST',
-                    headers: {
-                        "Access-Control-Allow-Origin": "https://earthfirepizzas.com",
-                    },
                     body: formData,
                     mode: 'no-cors' // Add this line 
                     });
