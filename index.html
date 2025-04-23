@@ -509,8 +509,8 @@
 
                         <!-- ERROR RESPONSE on form submit -->
                         <section id="mce-responses" class="clear foot form_response">
-                            <div aria-live="polite" class="response" id="mce-error-response" style="display: none;"></div>
-                            <div aria-live="polite" class="response" id="mce-success-response" style="display: none;"></div>
+                            <div aria-live="polite" class="response" id="mce-error-response"></div>
+                            <div aria-live="polite" class="response" id="mce-success-response"></div>
                         </section>
 
                         <!-- /* real people should not fill this in and expect good things
@@ -679,6 +679,40 @@
 
             form.addEventListener("input", (event) => {
                 validateForm([inputName, inputEmail]);
+            });
+
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault(); // Prevent default form submission
+
+                // clear any responses
+                form.querySelector('#mce-responses').children.innerHTML = '';
+
+                const formData = new FormData(form);
+
+                try {
+                    const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'cors' // Add this line
+                    });
+
+                    if (response.status === 200) {
+                    // Success handling
+                        console.log('Successfully subscribed!');
+                    // clear the form or show a success message to the user
+                    //reset() clears and resets form to original state.
+                        event.currentTarget.reset();
+                        form.querySelector('#mce-success-response').innerHTML = 'Thank You!';
+                    } else {
+                        // Error handling
+                        console.error('Subscription failed.', response.error);
+                        form.querySelector('#mce-error-response').innerHTML = 'Ooops! Something went wrong...';
+                    }
+                } catch (error) {
+                    console.error('Network error:', error);
+                    form.querySelector('#mce-error-response').innerHTML = 'Ooops! Something went wrong...';
+                }
             });
 
         }());
