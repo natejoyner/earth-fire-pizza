@@ -682,42 +682,7 @@
             });
 
 
-            form.addEventListener('submit', async (event) => {
-                event.preventDefault(); // Prevent default form submission
-
-                // clear any responses
-                form.querySelector('#mce-responses').children.innerHTML = '';
-
-                const formData = new FormData(form);
-
-                try {
-                    const response = await fetch(form.action, {
-                    method: 'POST',
-                    headers: {
-                        "Access-Control-Allow-Origin": "https://earthfirepizzas.us15.list-manage.com/subscribe/post?u=658ceda3c281b8975814f580e&id=79a0c64ce3&f_id=000aa6e0f0",
-                        // "Content-Type": "application/json",
-                    },
-                    body: formData,
-                    mode: 'cors' // Add this line 
-                    });
-
-                    if (response.status === 200) {
-                    // Success handling
-                        console.log('Successfully subscribed!');
-                    // clear the form or show a success message to the user
-                    //reset() clears and resets form to original state.
-                        event.currentTarget.reset();
-                        form.querySelector('#mce-success-response').innerHTML = 'Thank You!';
-                    } else {
-                        // Error handling
-                        console.error('Subscription failed.', response.error);
-                        form.querySelector('#mce-error-response').innerHTML = 'Ooops! Something went wrong...';
-                    }
-                } catch (error) {
-                    console.error('Network error:', error);
-                    form.querySelector('#mce-error-response').innerHTML = 'Ooops! Something went wrong...';
-                }
-            });
+            
 
         }());
     </script>
